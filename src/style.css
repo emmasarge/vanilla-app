@@ -1,0 +1,7 @@
+.weather-icon {
+    filter: invert(0.9) sepia(1) saturate(9) hue-rotate(307deg);
+}
+
+.weather-icon-cold {
+    filter: invert(0.5) sepia(1) saturate(111) hue-rotate(561deg);
+}
