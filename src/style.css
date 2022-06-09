@@ -34,7 +34,6 @@ h3 {
     background-color: grey;
     border-radius: 3px;
     border:0;
-    width: 160px!important;
     color: #fafafa;
 }
 
@@ -52,4 +51,18 @@ img {
     font-weight: 200;
     font-size: 14px;;
 }
-
+@media (min-width: 401px) {
+    .btn {
+      width: 160px!important;
+    }
+   
+  }
+@media (max-width: 400px) {
+    .btn {
+      width: 300px!important;
+    }
+    input {
+        width: 300px!important;
+      }
+  }
+ 

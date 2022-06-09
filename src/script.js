@@ -34,18 +34,18 @@ function formatDate(date) {
     let description = response.data.weather[0].description;
     let displayDescription = document.querySelector("#weather-condition");
     let displayTemp = document.querySelector("#showTemp");
-    displayTemp.innerHTML = `${temperature}º`;
+    displayTemp.innerHTML = `${temperature}º `;
     displayDescription.innerHTML = `${description}`;
     displayCity.innerHTML = `${response.data.name}`;
     function convertToCelsius(event) {
       event.preventDefault();
       let displayTemp = document.querySelector("#showTemp");
-      displayTemp.innerHTML = `${temperature}º`;
+      displayTemp.innerHTML = `${temperature}º `;
     }
     function convertToFahrenheit(event) {
       event.preventDefault();
       let displayTemp = document.querySelector("#showTemp");
-      displayTemp.innerHTML = `${toFarenheit}º`;
+      displayTemp.innerHTML = `${toFarenheit}º `;
     }
     let clickFarenheit = document.querySelector("#showF");
     clickFarenheit.addEventListener("click", convertToFahrenheit);
