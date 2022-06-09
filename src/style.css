@@ -1,7 +1,55 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap');
+
 .weather-icon {
-    filter: invert(0.9) sepia(1) saturate(9) hue-rotate(307deg);
+    filter: invert(0.7) sepia(1) saturate(5) hue-rotate(2deg);
+}
+.weather-icon-hot {
+    filter: invert(0.6) sepia(1) saturate(3) hue-rotate(4deg);
+}
+.weather-icon-grey {
+    filter: invert(0.5) sepia(1) saturate(0) hue-rotate(146deg);
 }
 
-.weather-icon-cold {
-    filter: invert(0.5) sepia(1) saturate(111) hue-rotate(561deg);
+body{
+    font-family: 'Quicksand', sans-serif;
 }
+
+p {
+    margin: 0;
+}
+h3 {
+    margin-bottom: 0px;
+}
+.weather-app {
+    max-width: 650px;
+    margin: 20px auto;
+    border: lightgrey solid 1px;
+    border-radius: 6px;
+    padding: 10px 0px;
+   
+}
+.btn {
+    background-color: grey;
+    border-radius: 3px;
+    border:0;
+    width: 160px!important;
+    color: #fafafa;
+}
+
+.btn:hover {
+    background-color: cadetblue;
+    transition: all 1.2s ease-in-out;
+    color: #fafafa;
+}
+img {
+        display: flex;
+        align-items: center;
+        margin: auto;
+}
+#date-time {
+    font-weight: 200;
+    font-size: 14px;;
+}
+

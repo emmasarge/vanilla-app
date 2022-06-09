@@ -17,65 +17,67 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="weather-body mt-3">
-            <div class="row g-3 align-items-center">
+    <div class="container weather-app">
+        <div class="weather-body mt-3 px-4">
+            <div class="row g-3 align-items-center ps-4">
                 <div class="col-auto">
-                    <input type="text" id="search-input" class="form-control" placeholder="search city">
+                    <input type="text" id="search-input" class="form-control w-100" placeholder="search city">
                 </div>
                 <div class="col-auto">
-                    <button class="btn btn-primary">search</button>
+                    <button class="btn px-5 w-100" id="search-btn">search</button>
                 </div>
                 <div class="col-auto">
-                    <button class="btn btn-primary">current location</button>
+                    <button class="btn w-100" id="location-btn">current location</button>
                 </div>
             </div>
-            <div class="row g-3 align-items-center  container-fluid">
-                <div class="col-3">
+            <div class="d-flex row g-3 align-items-center ps-4 mt-2">
+                <div class="col-6">
                     <div>
                         <p id="date-time"></p>
                         <h3 id="city-name">Seattle</h3>
                         <p id="weather-condition">Partly cloudy</p>
-                        <p class="temperature"><span id="temp">19º </span><span id="showC">C</span>/<span
+                        <p class="temperature"><span id="showTemp">19º </span><span id="showC">C</span>/<span
                                 id="showF">F</span></p>
                     </div>
                 </div>
-                <div class="col-3">
-                    <div>
-                      <img src="src/img/circle.svg" class="weather-icon"/>
+                <div class="col-6">
+                    <div class="mx-auto">
+                        <img src="src/img/circle.svg" class="weather-icon" />
+                    </div>
+                   
                     </div>
                 </div>
             </div>
-            <div class="row g-3 align-items-center mt-3">
-                <div class="col-auto px-4">
+            <div class="row g-3 align-items-center mt-3 mb-3">
+                <div class="col px-4 text-center">
                     <h4>Mon</h4>
-                    <img src="src/img/circle.svg" width="50px" class="weather-icon"/>
-                    <p class="mon-temperature"><span id="temp">19º </span><span id="showC">C</span>/<span
-                        id="showF">F</span></p>
+                    <img src="src/img/circle.svg" width="50px" class="weather-icon" />
+                    <p class="mon-temperature"><span id="temp">19º </span><span id="showC"> C</span>/<span
+                            id="showF">F</span></p>
                 </div>
-                <div class="col-auto px-4">
+                <div class="col px-4  text-center">
                     <h4>Tues</h4>
-                    <img src="src/img/circle.svg" width="50px" class="weather-icon"/>
+                    <img src="src/img/circle.svg" width="50px" class="weather-icon-hot" />
                     <p class="tues-temperature"><span id="temp">15º </span><span id="showC">C</span>/<span
-                        id="showF">F</span></p>
+                            id="showF">F</span></p>
                 </div>
-                <div class="col-auto px-4">
+                <div class="col px-4  text-center">
                     <h4>Wed</h4>
-                    <img src="src/img/circle.svg" width="50px" class="weather-icon"/>
+                    <img src="src/img/circle.svg" width="50px" class="weather-icon" />
                     <p class="wed-temperature"><span id="temp">16º </span><span id="showC">C</span>/<span
-                        id="showF">F</span></p>
+                            id="showF">F</span></p>
                 </div>
-                <div class="col-auto px-4">
+                <div class="col px-4  text-center">
                     <h4>Thurs</h4>
-                    <img src="src/img/circle.svg" width="50px" class="weather-icon"/>
-                    <p class="thurs-temperature"><span id="temp">14º </span><span id="showC">C</span>/<span
-                        id="showF">F</span></p>
+                    <img src="src/img/circle.svg" width="50px" class="weather-icon-grey" />
+                    <p class="thurs-temperature"><span id="temp">13º </span><span id="showC">C</span>/<span
+                            id="showF">F</span></p>
                 </div>
-                <div class="col-auto px-4">
+                <div class="col px-4  text-center">
                     <h4>Fri</h4>
-                    <img src="src/img/circle.svg" width="50px" class="weather-icon"/>
+                    <img src="src/img/circle.svg" width="50px" class="weather-icon-hot" />
                     <p class="fri-temperature"><span id="temp">19º </span><span id="showC">C</span>/<span
-                        id="showF">F</span></p>
+                            id="showF">F</span></p>
                 </div>
             </div>
         </div>
