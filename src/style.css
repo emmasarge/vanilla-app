@@ -51,6 +51,18 @@ img {
     font-weight: 200;
     font-size: 14px;;
 }
+#showC:hover {
+    font-size: larger;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+#showF:hover {
+    font-size: larger;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
 @media (min-width: 401px) {
     .btn {
       width: 160px!important;
