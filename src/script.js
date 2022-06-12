@@ -71,7 +71,7 @@ function getForecast(coordinates){
 function showWeather(response) {
   let displayCity = document.querySelector("#city-name");
   let temperature = Math.round(response.data.main.temp);
-  let toFarenheit = Math.round(9 * temperature + 160) / 5;
+//   let toFarenheit = Math.round(9 * temperature + 160) / 5;
   let description = response.data.weather[0].description;
   let displayDescription = document.querySelector("#weather-condition");
   let displayTemp = document.querySelector("#showTemp");
