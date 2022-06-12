@@ -89,21 +89,21 @@ function showWeather(response) {
   );
   iconElement.setAttribute("width", "150px");
   iconElement.setAttribute("alt", response.data.weather[0].description);
-  function convertToCelsius(event) {
-    event.preventDefault();
-    let displayTemp = document.querySelector("#showTemp");
-    displayTemp.innerHTML = `${temperature}º `;
-  }
-  function convertToFahrenheit(event) {
-    event.preventDefault();
-    let displayTemp = document.querySelector("#showTemp");
-    displayTemp.innerHTML = `${toFarenheit}º `;
-  }
-  let clickFarenheit = document.querySelector("#showF");
-  clickFarenheit.addEventListener("click", convertToFahrenheit);
+//   function convertToCelsius(event) {
+//     event.preventDefault();
+//     let displayTemp = document.querySelector("#showTemp");
+//     displayTemp.innerHTML = `${temperature}º `;
+//   }
+//   function convertToFahrenheit(event) {
+//     event.preventDefault();
+//     let displayTemp = document.querySelector("#showTemp");
+//     displayTemp.innerHTML = `${toFarenheit}º `;
+//   }
+//   let clickFarenheit = document.querySelector("#showF");
+//   clickFarenheit.addEventListener("click", convertToFahrenheit);
 
-  let clickCelsius = document.querySelector("#showC");
-  clickCelsius.addEventListener("click", convertToCelsius);
+//   let clickCelsius = document.querySelector("#showC");
+//   clickCelsius.addEventListener("click", convertToCelsius);
 
   if (temperature > 20) {
     document.querySelector("#showTemp").style.color= "#d36f34";
