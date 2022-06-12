@@ -34,10 +34,14 @@ function formatDate(date) {
     let description = response.data.weather[0].description;
     let displayDescription = document.querySelector("#weather-condition");
     let displayTemp = document.querySelector("#showTemp");
+    let humidityElement = document.querySelector("#humidity");
+    let windElement = document.querySelector("#wind");
     let iconElement = document.querySelector("#icon");
     displayTemp.innerHTML = `${temperature}º `;
     displayDescription.innerHTML = `${description}`;
     displayCity.innerHTML = `${response.data.name}`;
+    humidityElement.innerHTML = response.data.main.humidity;
+    windElement.innerHTML = Math.round(response.data.wind.speed);
     iconElement.setAttribute(
         "src",
         `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
