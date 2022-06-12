@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap');
 
 .weather-icon {
-    filter: invert(0.7) sepia(1) saturate(5) hue-rotate(2deg);
+    
 }
 .weather-icon-hot {
     filter: invert(0.6) sepia(1) saturate(3) hue-rotate(4deg);
@@ -63,6 +63,18 @@ img {
     transition: all 0.3s ease-in-out;
     cursor: pointer;
 }
+.open-source {
+    font-size: 10px;
+    font-weight: 200;
+}
+a {
+    color: gray;
+}
+a:hover {
+    color:darksalmon;
+    transition: all 0.3s ease-in;
+}
+
 @media (min-width: 401px) {
     .btn {
       width: 160px!important;

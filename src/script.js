@@ -34,9 +34,16 @@ function formatDate(date) {
     let description = response.data.weather[0].description;
     let displayDescription = document.querySelector("#weather-condition");
     let displayTemp = document.querySelector("#showTemp");
+    let iconElement = document.querySelector("#icon");
     displayTemp.innerHTML = `${temperature}º `;
     displayDescription.innerHTML = `${description}`;
     displayCity.innerHTML = `${response.data.name}`;
+    iconElement.setAttribute(
+        "src",
+        `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+      );
+      iconElement.setAttribute("width", "150px");
+      iconElement.setAttribute("alt", response.data.weather[0].description);
     function convertToCelsius(event) {
       event.preventDefault();
       let displayTemp = document.querySelector("#showTemp");
@@ -54,26 +61,40 @@ function formatDate(date) {
     clickCelsius.addEventListener("click", convertToCelsius);
 
 
-    if (temperature > 14) {
-        document.querySelector(".weather-icon").style.filter= "invert(0.9) sepia(1) saturate(9) hue-rotate(307deg)";
+    // if (temperature < 25) {
+    //     document.querySelector(".weather-icon").style.filter= "invert(0.6) sepia(1) saturate(3) hue-rotate(4deg)";
      
-    } else {
-        document.querySelector(".weather-icon").style.filter= "invert(0.7) sepia(1) saturate(5) hue-rotate(2deg)";
-    }
+    // } else {
+    //     document.querySelector(".weather-icon").style.filter= "0";
+    // }
 
 }
-  
-  
-  function searchCity(event) {
-    event.preventDefault();
-    let cityInput = document.querySelector("#search-input");
-    let city = cityInput.value;
+
+function search(city) {
     let key = "2de1414d2167da92d347476a4e1097e6";
     let units = "metric";
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=${units}`;
     axios.get(url).then(showWeather);
   }
   
+  function handleSubmit(event) {
+    event.preventDefault();
+    let cityInputElement = document.querySelector("#city-input");
+    search(cityInputElement.value);
+  }
+  
+  
+  function searchCity(city) {
+    let key = "2de1414d2167da92d347476a4e1097e6";
+    let units = "metric";
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=${units}`;
+    axios.get(url).then(showWeather);
+  }
+  function handleSubmit(event) {
+      event.preventDefault();
+      let cityInput = document.querySelector("#search-input");
+      searchCity(cityInput.value)
+  }
   function showCity(event) {
     event.preventDefault();
     navigator.geolocation.getCurrentPosition(function (position) {
@@ -84,9 +105,12 @@ function formatDate(date) {
       axios.get(url).then(showWeather);
     });
   }
+
+  
   let searchForm = document.querySelector("#search-btn");
-  searchForm.addEventListener("click", searchCity);
+  searchForm.addEventListener("click", handleSubmit);
   
   let button = document.querySelector("#location-btn");
   button.addEventListener("click", showCity);
   
+  searchCity("Paris")
