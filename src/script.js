@@ -35,24 +35,25 @@ function getDatefromCoords(timestamp) {
 
 }
 function displayForecast(response) {
-    let forecast = response.data.daily;
+let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
-  let forecastHTML = `<div class="d-flex row justify-content-center w-100 mt-3">`;
+  let forecastHTML = `<div class="d-flex row justify-content-center w-100 mt-3 forecast-row">`;
   forecast.forEach(function (forecastDay, index) {
       if(index < 6 ){
     forecastHTML =
       forecastHTML +
       `
-      <div class="col-2 text-center">
+      <div class="col text-center forecast-col">
         <div class="weather-forecast-date">${getDatefromCoords(forecastDay.dt)}</div>
         <img
           src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
           alt=""
-          width="42"
+          width="50"
+          class="forecast-img"
         />
         <div class="weather-forecast-temperatures col">
-          <div class="weather-forecast-temperature-max" style="font-size: 10px; font-weight: 200;">Max temp: ${Math.round(forecastDay.temp.max)}º </div>
-          <div class="weather-forecast-temperature-min"style="font-size: 10px; font-weight: 200;">Min temp: ${Math.round(forecastDay.temp.min)}º  </div>
+          <div id="showMaxTemp" class="weather-forecast-temperature-max" style="font-size: 10px; font-weight: 200;">Hi: ${Math.round(forecastDay.temp.max)}º </div>
+          <div id="showMinTemp" class="weather-forecast-temperature-min"style="font-size: 10px; font-weight: 200;">Lo: ${Math.round(forecastDay.temp.min)}º  </div>
         </div>
       </div>
   `;
@@ -104,20 +105,13 @@ function showWeather(response) {
   let clickCelsius = document.querySelector("#showC");
   clickCelsius.addEventListener("click", convertToCelsius);
 
-  // if (temperature < 25) {
-  //     document.querySelector(".weather-icon").style.filter= "invert(0.6) sepia(1) saturate(3) hue-rotate(4deg)";
+  if (temperature > 20) {
+    document.querySelector("#showTemp").style.color= "#d36f34";
 
-  // } else {
-  //     document.querySelector(".weather-icon").style.filter= "0";
-  // }
+  } else {
+      document.querySelector("#showTemp").style.color= "#566284";
+  }
   getForecast(response.data.coord);
-}
-
-function search(city) {
-  let key = "2de1414d2167da92d347476a4e1097e6";
-  let units = "metric";
-  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=${units}`;
-  axios.get(url).then(showWeather);
 }
 
 function handleSubmit(event) {
