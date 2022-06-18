@@ -142,6 +142,7 @@ function showCity(event) {
   });
 }
 
+
 let searchForm = document.querySelector("#search-btn");
 searchForm.addEventListener("click", handleSubmit);
 
